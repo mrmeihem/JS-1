@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-1: Home Work 1.</title>
+</head>
+
+<body>
+
+    <script>
+        // Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+        // где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+        // переданного значения операции (использовать switch) выполнить одну из арифметических операций
+        // (использовать функции из задания 4) и вернуть полученное значение.
+
+        function sum(a, b) {
+            return a + b;
+        }
+
+        function dif(a, b) {
+            return a - b;
+        }
+
+        function mult(a, b) {
+            return a * b;
+        }
+
+        function div(a, b) {
+            return a / b;
+        }
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case 'сложение':
+                    return sum(a, b);
+                    break;
+                case 'вычитание':
+                    return dif(a, b);
+                    break;
+                case 'умножение':
+                    return mult(a, b);
+                    break;
+                case 'деление':
+                    return div(a, b);
+                    break;
+            }
+        }
+
+        let a = parseInt(prompt('введите число а'));
+        let b = parseInt(prompt('введите число b'));
+        let op = prompt('введите название операции (сложение, вычитание, умножение, деление)').toLowerCase();
+
+        document.write(`Результат операции "${op}" — ${mathOperation(a, b, op)}`);
+
+    </script>
+
+</body>
+
+</html>
