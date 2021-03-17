@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-1: Home Work 1.</title>
+</head>
+
+<body>
+
+    <script>
+
+        function addroubles(sum) {
+            let digits = String(sum).split('');
+            let last2digits = digits[(digits.length - 2)] + digits[(digits.length - 1)];
+            let lastdigit = digits[(digits.length - 1)];
+
+            // То же самое можно было сделать через строки.
+            // let digits = String(sum);
+            // let last2digits = digits.charAt(digits.length - 2) + digits.charAt(digits.length - 1);
+            // let lastdigit = digits.charAt(digits.length - 1);
+
+            if (last2digits >= 11 && last2digits <= 19) {
+                return 'рублей';
+            } else {
+                switch (lastdigit) {
+                    case '1':
+                        return 'рубль';
+                        break;
+                    case '2':
+                    case '3':
+                    case '4':
+                        return 'рубля';
+                        break;
+                    default:
+                        return 'рублей';
+                        break;
+                }
+            }
+        }
+
+        let sum = prompt('Введите сумму')
+        alert(`Ваша сумма в ${sum} ${addroubles(sum)} успешно зачислена.`);
+
+    </script>
+
+</body>
+
+</html>

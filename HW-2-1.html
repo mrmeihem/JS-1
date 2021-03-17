@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-1: Home Work 1.</title>
+</head>
+
+<body>
+
+    <script>
+        //пример 1
+        let a = 1,
+            b = 1, c, d;
+
+        // Задали 4 переменных. a и b равны 1, c и d - undefined
+
+        c = ++a;
+
+        // инкремент в префиксной форме увеличивает a на единицу, получается 2 и значение присваевается c.
+
+        alert(c); // ответ: 2
+
+        // Таким образом c = 2
+
+        //пример 2
+        // инкремент в постфиксной форме увеличивает на единицу просле присвоения d значения 1.
+        d = b++; // b = 2
+
+        alert(d); //ответ: 1
+
+        //пример 3
+        // 2 + инкремент в префиксной форме увеличивает a на 1, и теперь a = 3
+        c = 2 + ++a;
+        alert(c); //ответ: 5
+
+        //пример 4
+        // инкремент в постфиксной форме, b = 2 в начале, d = 4, b = 3 после.
+        d = 2 + b++;
+        alert(d); //ответ: 4
+        alert(a); //3
+        alert(b); //3
+    </script>
+
+</body>
+
+</html>
