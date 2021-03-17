@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-1: Home Work 1.</title>
+</head>
+
+<body>
+
+    <script>
+        // Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя параметрами. Т.е. например, функция для сложения должна принимать два числа, складывать их и возвращать результат.
+        // Обязательно использовать оператор return.
+
+        function sum(a, b) {
+            return a + b;
+        }
+
+        let dif = function (a, b) {
+            return a - b;
+        }
+
+        const mult = (a, b) => a * b; // return добавляется автоматический
+
+        let div = (a, b) => a / b; // return добавляется автоматический
+
+        let a = parseInt(prompt('введите число а'));
+        let b = parseInt(prompt('введите число b'));
+
+        document.write(`Сумма равна ${sum(a, b)}<br>Разность равна ${dif(a, b)}<br>Произведение равно ${mult(a, b)}<br>Частность равна ${div(a, b)}<br>`);
+
+    </script>
+
+</body>
+
+</html>
