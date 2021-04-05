@@ -28,6 +28,20 @@
     <script>
         'use strict';
 
+        function clickHandler(event) {
+            let notificationSound = new Audio('notification.mp3');
+            let messageHeight = message.clientHeight + 30;
+
+            notificationSound.play();
+            message.style.transform = `translateY(-${messageHeight}px)`;
+        }
+
+
+        const button = document.querySelector('button');
+        const message = document.querySelector('.message');
+
+        button.addEventListener('click', clickHandler);
+
     </script>
 </body>
 

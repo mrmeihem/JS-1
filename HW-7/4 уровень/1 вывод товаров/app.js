@@ -1,4 +1,16 @@
 "use strict";
+
+/*
+Задание. Вам нужно при кликах по кнопкам показывать соответствующие товары.
+Информация о товарах находится в объекте products в файле app.js. Для генерации
+разметки можете использовать шаблон представленный в app.js.
+*/
+
+const buttons = document.querySelectorAll('button');
+let productsElmnt = document.querySelector('.products');
+
+buttons.forEach(button => button.addEventListener('click', clickHandler));
+
 /* 
 Разметка товара:
 
@@ -81,11 +93,15 @@ const products = {
  * @param {MouseEvent} event
  */
 function clickHandler(event) {
-    //вам нужно очищать содержимое .products
-    
-    //в showCategory надо передать строку с типом категории, тип берите
-    //из атрибута data-type у кнопки, по которой кликнули.
-    
+    /* 
+    вам нужно очищать содержимое .products
+    в showCategory надо передать строку с типом категории, тип берите
+    из атрибута data-type у кнопки, по которой кликнули. 
+    */
+
+    productsElmnt.innerHTML = '';
+    showCategory(event.target.dataset.type);
+
 }
 
 /**
@@ -96,7 +112,7 @@ function clickHandler(event) {
  * по которой кликнули.
  */
 function showCategory(category) {
-    
+    productsElmnt.innerHTML = getProductMarkup(category);
 }
 
 /**
@@ -109,5 +125,17 @@ function showCategory(category) {
  * в верху этого файла.
  */
 function getProductMarkup(product) {
+    let productsHTML = '';
 
+    for (let i = 0; i < products[product].length; i++) {
+        productsHTML += `
+            <div class="product">
+            <div>${products[product][i].name}</div>
+            <img src="${products[product][i].imageUrl}" alt="">
+            <div>${products[product][i].price}</div>
+            <a href="https://example.com/producs/${products[product].id} ">Подробнее</a>
+            </div > `;
+    }
+
+    return productsHTML;
 }
